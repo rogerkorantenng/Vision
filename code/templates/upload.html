@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+</head>
+<body>
+    <h1>Upload New Item</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div>
+            <label for="file">Select File:</label>
+            <input type="file" name="file" id="file" accept="image/*" required>
+        </div>
+        <input type="submit" value="Upload">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Inventory</a>
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+</body>
+</html>

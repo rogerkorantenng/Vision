@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Inventory</title>
+</head>
+<body>
+    <h1>Uploaded Files Inventory</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Filename</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file in files %}
+            <tr>
+                <td>{{ file.filename }}</td>
+                <td>{{ file.category }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}">Upload More Files</a>
+</body>
+</html>

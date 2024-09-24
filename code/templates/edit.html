@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+</head>
+<body>
+    <h1>Edit File</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div>
+            <label for="file">Upload New Image (Optional):</label>
+            <input type="file" name="file" id="file" accept="image/*">
+        </div>
+        <div>
+            <label for="category">Category:</label>
+            <input type="text" name="category" id="category" value="{{ file_record.category }}" required>
+        </div>
+        <input type="submit" value="Update">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Inventory</a>
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+</body>
+</html>
